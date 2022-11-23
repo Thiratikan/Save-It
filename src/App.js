@@ -1,8 +1,14 @@
-import "./App.css";
-import Login from "./Component/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./Component/LoginPage";
+import Register from "./Component/RegisterPage";
 
 function App() {
-  return <Login />;
+  return (
+    <>
+      <Login />;
+      <Register />
+    </>
+  );
 }
 
 export default App;
