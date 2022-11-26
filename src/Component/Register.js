@@ -94,24 +94,28 @@ function Register() {
           //turn off auto suggestion off because this is a register field
           autoComplete="off"
           onChange={(e) => setUser(e.target.value)}
+          value={user}
           required
           //if thiere is a valid name, it will set to false
           aria-invalid={validName ? "false" : "true"}
-          aria-describedby="uninote"
+          aria-describedby="uidnote"
           onFocus={() => setUserFocus(true)}
           onBlur={() => setUserFocus(false)}
         />
         {/* if user focus is true and user exist and not empty and also not a valid name
         if there something come up the instruction will show up */}
         <p
-          id="uninote"
+          id="uidnote"
           className={
-            userFocus && user && !validName ? "intruction" : "offscreen"
+            userFocus && user && !validName ? "instructions" : "offscreen"
           }
         >
-          4 to 24 charaters. <br />
-          Must begin with a letter. <br />
-          Letters, numbers, underscores, and hyphens are allowed.
+          <FontAwesomeIcon icon={faInfoCircle} />
+          4 to 24 characters.
+          <br />
+          Must begin with a letter.
+          <br />
+          Letters, numbers, underscores, hyphens are allowed.
         </p>
       </form>
     </section>
