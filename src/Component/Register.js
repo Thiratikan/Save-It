@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormInput from "./FormInput";
-import { Form } from "../styles/Style-Register";
+import { Form, Button } from "../styles/Style-Register";
 
 function Register() {
   const [values, setValues] = useState({
@@ -15,10 +15,9 @@ function Register() {
       id: 1,
       name: "username",
       type: "text",
-      placeholder: "Username",
       errorMessage:
         "Username should be 3-16 characters and should not include spaacial characters.",
-      label: "Username",
+      label: "Username: ",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
     },
@@ -26,19 +25,17 @@ function Register() {
       id: 2,
       name: "email",
       type: "email",
-      placeholder: "Email",
       errorMessage: "It should be email address.",
-      label: "Email",
+      label: "Email: ",
       required: true,
     },
     {
       id: 3,
       name: "password",
       type: "password",
-      placeholder: "Password",
       errorMessage:
         "Password should be 8-20 characters and including at least 1 character, 1 number, and 1 special character.",
-      label: "Password",
+      label: "Password: ",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
       required: true,
     },
@@ -46,9 +43,8 @@ function Register() {
       id: 4,
       name: "confirmPassword",
       type: "password",
-      placeholder: "Confirm Password",
       errorMessage: "Password doens't match.",
-      label: "Confirm Password",
+      label: "Confirm Password: ",
       pattern: values.password,
       required: true,
     },
@@ -74,7 +70,9 @@ function Register() {
             onChange={onChange}
           />
         ))}
-        <button>Submit</button>
+        <Button>
+          <button>Submit</button>
+        </Button>
       </form>
     </Form>
   );

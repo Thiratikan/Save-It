@@ -4,6 +4,7 @@ export const Form = styled.div`
   span {
     color: red;
     display: none;
+    font-size: 13px;
   }
   input:invalid[focus="true"] {
     border: 1px solid red;
@@ -13,11 +14,26 @@ export const Form = styled.div`
   }
 `;
 
-export const Tap = styled.div`
+export const Tab = styled.div`
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background: white;
+    margin: 100px auto 0;
+    word-break: break-all;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+  }
   .tabs {
     padding: 15px;
     text-align: center;
-    width: 50px;
+    width: 41.9%;
     background-color: white;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.274);
@@ -51,4 +67,9 @@ export const Tap = styled.div`
   .active-content {
     display: block;
   }
+`;
+export const Button = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 `;

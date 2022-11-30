@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "../styles/Style-Register";
 
 function LoginForm({ Login, error }) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
@@ -43,7 +44,9 @@ function LoginForm({ Login, error }) {
             value={details.password}
           />
         </div>
-        <input type="submit" value="LOGIN" />
+        <Button>
+          <input type="submit" value="LOGIN" />
+        </Button>
       </form>
     </div>
   );
