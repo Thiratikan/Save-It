@@ -14,35 +14,37 @@ function LoginForm({ Login, error }) {
         <h1>Sign In</h1>
         {error !== "" ? <div>{error}</div> : ""}
         <div>
-          <label htmlFor="name">Name: </label>
           <input
             type="text"
             name="name"
+            placeholder="Enter Name"
             id="name"
             onChange={(e) => setDetails({ ...details, name: e.target.value })}
             value={details.name}
           />
         </div>
         <div>
-          <label htmlFor="email">Email: </label>
           <input
             type="email"
             name="email"
+            placeholder="Enter Email"
             id="email"
             onChange={(e) => setDetails({ ...details, email: e.target.value })}
             value={details.email}
+            required
           />
         </div>
         <div>
-          <label htmlFor="password">Password: </label>
           <input
             type="password"
             name="password"
+            placeholder="Enter Password"
             id="password"
             onChange={(e) =>
               setDetails({ ...details, password: e.target.value })
             }
             value={details.password}
+            required
           />
         </div>
         <Button>

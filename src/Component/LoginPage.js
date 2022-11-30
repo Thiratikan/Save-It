@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 
 function Login() {
+  let navigate = useNavigate();
+
   const adminUser = {
     email: "cellyblue14@gmail.com",
     password: "1234",
@@ -39,7 +42,13 @@ function Login() {
           <h1>
             Welcome, <span>{user.name}</span>
           </h1>
-          <button>Next</button>
+          <button
+            onClick={() => {
+              navigate("/DashBorad");
+            }}
+          >
+            Next
+          </button>
           <button onClick={Logout}>Logout</button>
         </div>
       ) : (

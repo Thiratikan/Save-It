@@ -66,6 +66,13 @@ export const Form = styled.div`
     display: none;
     font-size: 13px;
   }
+  input {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 5px;
+  }
   input:invalid[focus="true"] {
     border: 1px solid red;
   }
