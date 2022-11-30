@@ -1,5 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import FormInput from "./FormInput";
+import { Form } from "../styles/Style-Register";
+
 function Register() {
   const [values, setValues] = useState({
     username: "",
@@ -14,42 +16,66 @@ function Register() {
       name: "username",
       type: "text",
       placeholder: "Username",
+      errorMessage:
+        "Username should be 3-16 characters and should not include spaacial characters.",
       label: "Username",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
     },
     {
       id: 2,
       name: "email",
       type: "email",
       placeholder: "Email",
+      errorMessage: "It should be email address.",
       label: "Email",
+      required: true,
     },
     {
       id: 3,
       name: "password",
       type: "password",
       placeholder: "Password",
+      errorMessage:
+        "Password should be 8-20 characters and including at least 1 character, 1 number, and 1 special character.",
       label: "Password",
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      required: true,
     },
     {
       id: 4,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
+      errorMessage: "Password doens't match.",
       label: "Confirm Password",
+      pattern: values.password,
+      required: true,
     },
   ];
   const handleSubmit = (e) => {
     // when chilck to submit the page it will refreash the page so to prevent it just write preventDefault
     e.preventDefault();
   };
-  return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <FormInput placeholder="Username" />
 
+  const onChange = (e) => {
+    // for each taeget name (taget.name) will update its name by using value (target.value)
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+  return (
+    <Form>
+      <form onSubmit={handleSubmit}>
+        {inputs.map((input) => (
+          <FormInput
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={onChange}
+          />
+        ))}
         <button>Submit</button>
       </form>
-    </section>
+    </Form>
   );
 }
 
