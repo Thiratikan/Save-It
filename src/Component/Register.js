@@ -64,6 +64,7 @@ function Register() {
   };
   return (
     <Form>
+      <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         {inputs.map((input) => (
           <FormInput
