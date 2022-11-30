@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../styles/Style-Register";
+import { Form, Button } from "../styles/Style-Register";
 
 function LoginForm({ Login, error }) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
@@ -8,9 +8,10 @@ function LoginForm({ Login, error }) {
     Login(details);
   };
   return (
-    <div>
+    <Form>
+      <img src="./images/SaveItLogo.png" alt="" />
       <form onSubmit={submitHandler}>
-        <h1>Login</h1>
+        <h1>Sign In</h1>
         {error !== "" ? <div>{error}</div> : ""}
         <div>
           <label htmlFor="name">Name: </label>
@@ -48,7 +49,7 @@ function LoginForm({ Login, error }) {
           <input type="submit" value="LOGIN" />
         </Button>
       </form>
-    </div>
+    </Form>
   );
 }
 

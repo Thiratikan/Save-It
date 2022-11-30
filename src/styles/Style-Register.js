@@ -1,23 +1,10 @@
 import styled from "styled-components";
 
-export const Form = styled.div`
-  span {
-    color: red;
-    display: none;
-    font-size: 13px;
-  }
-  input:invalid[focus="true"] {
-    border: 1px solid red;
-  }
-  input:invalid[focus="true"] ~ span {
-    display: block;
-  }
-`;
-
-export const Tab = styled.div`
+export const TopTab = styled.div`
   h1 {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 10px;
   }
 
   .container {
@@ -72,4 +59,23 @@ export const Button = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+`;
+export const Form = styled.div`
+  span {
+    color: red;
+    display: none;
+    font-size: 13px;
+  }
+  input:invalid[focus="true"] {
+    border: 1px solid red;
+  }
+  input:invalid[focus="true"] ~ span {
+    display: block;
+  }
+  img {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+  }
 `;

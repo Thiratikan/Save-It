@@ -60,6 +60,7 @@ function Register() {
   };
   return (
     <Form>
+      <img src="./images/SaveItLogo.png" alt="" />
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         {inputs.map((input) => (
