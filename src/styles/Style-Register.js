@@ -5,6 +5,7 @@ export const TopTab = styled.div`
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
+    font-family: "Fredoka One", cursive;
   }
 
   .container {

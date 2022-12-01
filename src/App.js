@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Component/HomePage";
-import DashBorad from "./Component/DashBorad";
+import DashBorad from "./Component/drive/DashBorad";
 
 function App() {
   return (
