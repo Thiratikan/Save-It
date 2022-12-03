@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 function DashBorad() {
-  return <div>DashBorad</div>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default DashBorad;
