@@ -9,7 +9,7 @@ function LoginForm({ Login, error }) {
   };
   return (
     <Form>
-      <img src="./images/SaveItLogo.png" alt="" />
+      <img src="./images/SaveItLogoGreen.png" alt="" />
       <form onSubmit={submitHandler}>
         <h1>Sign In</h1>
         {error !== "" ? <div>{error}</div> : ""}

@@ -3,6 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
 import * as AiIcons from "react-icons/ai";
+import { NavTopBar, NavSideBar } from "../../styles/Style-Dashboard";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -11,31 +12,33 @@ function Navbar() {
 
   return (
     <>
-      <div>
-        <Link to="#">
-          <FaIcons.FaBars onClick={showSidebar} />
+      <NavTopBar>
+        <Link to="#" className="menu-bar">
+          <FaIcons.FaBars onClick={showSidebar} className="bar" />
         </Link>
-      </div>
-      <img src="./images/SaveItLogo.png" alt="" />
-      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul onClick={showSidebar}>
-          <li className="navbar-toggle">
-            <Link to="#">
-              <AiIcons.AiOutlineClose />
-            </Link>
-          </li>
-          {Sidebar.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+        <img src="./images/SaveItLogoWhite.png" alt="" />
+      </NavTopBar>
+      <NavSideBar>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul onClick={showSidebar}>
+            <li>
+              <Link to="#">
+                <AiIcons.AiOutlineClose className="Closebar" />
+              </Link>
+            </li>
+            {Sidebar.map((item, index) => {
+              return (
+                <li key={index}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </NavSideBar>
     </>
   );
 }

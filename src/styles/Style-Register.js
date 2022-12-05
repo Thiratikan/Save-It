@@ -85,5 +85,7 @@ export const Form = styled.div`
     justify-content: center;
     margin: auto;
     align-items: center;
+    height: 60px;
+    width: 80px;
   }
 `;
