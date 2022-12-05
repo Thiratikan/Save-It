@@ -39,7 +39,8 @@ export const NavSideBar = styled.div`
     left: -100%;
     text-decoration: none;
   }
-ul{
+  
+  ul{
     background-color: #302f31;
     list-style-type: none;
 }
@@ -69,4 +70,15 @@ ul{
 
 export const DriveDesign = styled.div`
   color: blue;
+  .plusfolder {
+    color: #f5bf2a;
+    border-color: none;
+    width: 30px;
+    height: 30px;
+  }
+  button {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+  }
 `;
