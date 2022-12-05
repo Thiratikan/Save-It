@@ -6,7 +6,7 @@ export const Sidebar = [
   },
   {
     title: "Go to Drive",
-    path: "/",
+    path: "/Drive",
     cName: "nav=text",
   },
   {

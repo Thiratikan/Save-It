@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavTopBar = styled.div`
-  background-color: #281354;
+  background-color: #302f31;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -28,7 +28,7 @@ export const NavSideBar = styled.div`
     background-color: transparent;
   }
   .nav-menu {
-    background-color: #281354;
+    background-color: #302f31;
     width: 140px;
     height: 100vh;
     color: white;
@@ -40,17 +40,17 @@ export const NavSideBar = styled.div`
     text-decoration: none;
   }
 ul{
-    background-color: #281354;
+    background-color: #302f31;
     list-style-type: none;
 }
   .nav-menu.active {
     left: 0;
     transition: 350ms;
-    background-color: #281354;
+    background-color: #302f31;
   }
 
   .nav-menu a {
-    background-color: #281354;
+    background-color: #302f31;
     color: white;
     text-decoration: none;
     display: flex;
@@ -62,7 +62,11 @@ ul{
   }
 
   .nav-menu span {
-    background-color: #281354;
+    background-color: #302f31;
     font-family: "Lato";
 
+`;
+
+export const DriveDesign = styled.div`
+  color: blue;
 `;
