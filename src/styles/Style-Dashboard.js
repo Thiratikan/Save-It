@@ -32,18 +32,17 @@ export const NavSideBar = styled.div`
     width: 140px;
     height: 100vh;
     color: white;
-    display: flex;
-    justify-content: center;
     position: fixed;
     top: 0;
     left: -100%;
     text-decoration: none;
   }
-  
-  ul{
+
+  ul {
     background-color: #302f31;
     list-style-type: none;
-}
+  }
+
   .nav-menu.active {
     left: 0;
     transition: 350ms;
@@ -57,15 +56,13 @@ export const NavSideBar = styled.div`
     display: flex;
     align-items: center;
     font-size: 15px;
-    padding: 20px 35px 2px 20px;
     list-style: none;
     height: 40px;
   }
-
   .nav-menu span {
     background-color: #302f31;
     font-family: "Lato";
-
+  }
 `;
 
 export const DriveDesign = styled.div`
@@ -75,6 +72,7 @@ export const DriveDesign = styled.div`
     border-color: none;
     width: 30px;
     height: 30px;
+    margin: auto;
   }
   button {
     background-color: transparent;

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
-import { Modal, Form } from "react-bootstrap/";
+import { Modal, Form, Button } from "react-bootstrap/";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { database } from "../../firebase";
 
 function AddButton() {
   const [open, setOpen] = useState(false);
@@ -13,13 +15,26 @@ function AddButton() {
   function closeModal() {
     setOpen(false);
   }
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    database.folders.add({
+      name: name,
+      //parentId,
+      // userId: currentU ser.uid,
+      // path,
+      // createAt: database.getCurrentTimestamp(),
+    });
+    setName("");
+    closeModal();
+  }
   return (
     <>
-      <button onClick={openModal}>
+      <button variant="primary" onClick={openModal}>
         <FontAwesomeIcon icon={faFolderPlus} className="plusfolder" />
       </button>
       <Modal show={open} onHide={closeModal}>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Modal.Body>
             <Form.Group>
               <Form.Label>Folder Name</Form.Label>
@@ -31,7 +46,14 @@ function AddButton() {
               ></Form.Control>
             </Form.Group>
           </Modal.Body>
-          <Modal.Footer></Modal.Footer>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={closeModal}>
+              Close
+            </Button>
+            <Button variant="success" type="submit">
+              Add Folder
+            </Button>
+          </Modal.Footer>
         </Form>
       </Modal>
     </>
