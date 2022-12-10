@@ -4,7 +4,6 @@ import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 import { Modal, Form, Button } from "react-bootstrap/";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { database } from "../../firebase";
-import { useAuth } from "./contexts/AuthContext";
 
 function AddButton() {
   const [open, setOpen] = useState(false);
@@ -22,7 +21,7 @@ function AddButton() {
     database.folders.add({
       name: name,
       //parentId,
-      // userId: currentU ser.uid,
+      // userId: currentUser.uid,
       // path,
       // createAt: database.getCurrentTimestamp(),
     });

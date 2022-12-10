@@ -1,18 +1,14 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
+import { useAuth } from "./contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-import { Picture } from "../styles/Style-Register";
-import { Dashboard } from "../styles/Style-Register";
 
-function Register() {
+export default function Login() {
   return (
-    <Dashboard>
+    <>
       <Card>
         <Card.Body>
-          <Picture>
-            <img src="./images/SaveItLogoGreen.png" alt="" />
-          </Picture>
-          <h2 className="text-center mb-4">Sign Up</h2>
+          <h2 className="text-center mb-4">Log In</h2>
           {/* {error && <Alert variant="danger">{error}</Alert>} */}
           <Form>
             <Form.Group id="email">
@@ -23,21 +19,18 @@ function Register() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" required />
             </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control type="password" required />
-            </Form.Group>
             <Button className="w-100" type="submit">
-              Sign Up
+              Log In
             </Button>
           </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Need an account? <Link to="/register">Sign Up</Link>
       </div>
-    </Dashboard>
+    </>
   );
 }
-
-export default Register;
