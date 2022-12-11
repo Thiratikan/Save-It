@@ -4,7 +4,6 @@ import HomePage from "./Component/HomePage";
 import DashBorad from "./Component/drive/DashBorad";
 import Drive from "./Component/drive/Drive";
 import Login from "./Component/Login";
-import Register from "./Component/Register";
 
 function App() {
   return (
