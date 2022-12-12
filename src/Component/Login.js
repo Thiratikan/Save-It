@@ -10,7 +10,7 @@ export default function Login() {
   const { login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +19,7 @@ export default function Login() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      navigate("/dashborad");
     } catch {
       setError("Failed to log in");
     }
