@@ -4,6 +4,9 @@ import HomePage from "./Component/HomePage";
 import Drive from "./Component/drive/Drive";
 import Login from "./Component/Login";
 import DashBorad from "./Component/drive/DashBorad";
+import Profile from "./Component/Profile";
+import UpdateProfile from "./Component/UpdateProfile";
+import ForgotPassword from "./Component/ForgotPassword";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path="/drive" element={<Drive />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<HomePage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/updateprofile" element={<UpdateProfile />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
         </Routes>
       </Router>
     </>

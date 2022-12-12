@@ -6,12 +6,12 @@ export const Sidebar = [
   },
   {
     title: "Go to Drive",
-    path: "/Drive",
+    path: "/drive",
     cName: "nav=text",
   },
   {
     title: "Profile",
-    path: "/",
+    path: "/profile",
     cName: "nav=text",
   },
 ];
