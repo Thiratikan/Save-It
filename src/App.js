@@ -18,7 +18,7 @@ function App() {
           <Route path="/dashborad" element={<DashBorad />} />
           <Route path="/drive" element={<Drive />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<HomePage />} />
+          <Route path="/signup" element={<HomePage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/updateprofile" element={<UpdateProfile />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />

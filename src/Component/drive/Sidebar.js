@@ -1,7 +1,7 @@
 export const Sidebar = [
   {
-    title: "Features",
-    path: "/",
+    title: "Profile",
+    path: "/profile",
     cName: "nav=text",
   },
   {
@@ -10,8 +10,8 @@ export const Sidebar = [
     cName: "nav=text",
   },
   {
-    title: "Profile",
-    path: "/profile",
+    title: "Features",
+    path: "/",
     cName: "nav=text",
   },
 ];
