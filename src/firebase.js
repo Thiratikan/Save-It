@@ -22,6 +22,7 @@ export const database = {
     return { id: doc.id, ...doc.data() };
   },
   getCurrentTimestamp: firebase.firestore.FieldValue.serverTimestamp,
+  // create time stamp for the server
 };
 
 export const storage = getStorage(app);

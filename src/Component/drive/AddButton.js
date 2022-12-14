@@ -7,7 +7,7 @@ import { database } from "../../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import { v4 as uuidV4 } from "uuid";
 
-function AddButton() {
+function AddButton({ currentFolder }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const { currentUser } = useAuth();
@@ -24,10 +24,10 @@ function AddButton() {
     // to create folder in the database in firebase
     database.folders.add({
       name: name,
-      //parentId,
+      parentId: currentFolder.id,
       userId: currentUser.uid,
       // path,
-      // createAt: database.getCurrentTimestamp(),
+      createAt: database.getCurrentTimestamp(),
     });
 
     setName("");
