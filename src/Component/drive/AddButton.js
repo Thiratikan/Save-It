@@ -4,10 +4,13 @@ import { faFolderPlus } from "@fortawesome/free-solid-svg-icons";
 import { Modal, Form, Button } from "react-bootstrap/";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { database } from "../../firebase";
+import { useAuth } from "../contexts/AuthContext";
+import { v4 as uuidV4 } from "uuid";
 
 function AddButton() {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
+  const { currentUser } = useAuth();
 
   function openModal() {
     setOpen(true);
@@ -18,13 +21,15 @@ function AddButton() {
   function handleSubmit(e) {
     e.preventDefault();
 
+    // to create folder in the database in firebase
     database.folders.add({
       name: name,
       //parentId,
-      // userId: currentUser.uid,
+      userId: currentUser.uid,
       // path,
       // createAt: database.getCurrentTimestamp(),
     });
+
     setName("");
     closeModal();
   }
