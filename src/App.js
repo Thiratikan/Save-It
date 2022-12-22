@@ -16,12 +16,14 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/dashborad" element={<DashBorad />} />
-          <Route path="/drive" element={<Drive />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<HomePage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/updateprofile" element={<UpdateProfile />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
+          {/* //Drive */}
+          <Route path="/drive" element={<Drive />} />
+          <Route path="/folders/:folderId" element={<Drive />} />
         </Routes>
       </Router>
     </>
