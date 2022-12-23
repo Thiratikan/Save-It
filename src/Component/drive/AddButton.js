@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { database } from "../../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import { v4 as uuidV4 } from "uuid";
+import { ROOT_FOLDER } from "../hooks/useFolder";
 
 function AddButton({ currentFolder }) {
   const [open, setOpen] = useState(false);
@@ -21,12 +22,18 @@ function AddButton({ currentFolder }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (currentFolder == null) return;
+
+    const path = [...currentFolder.path];
+    if (currentFolder !== ROOT_FOLDER) {
+      path.push({ name: currentFolder.name, id: currentFolder.id });
+    }
     // to create folder in the database in firebase
     database.folders.add({
       name: name,
       parentId: currentFolder.id,
       userId: currentUser.uid,
-      // path,
+      path: path,
       createAt: database.getCurrentTimestamp(),
     });
 

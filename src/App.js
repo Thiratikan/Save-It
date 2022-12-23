@@ -23,7 +23,7 @@ function App() {
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           {/* //Drive */}
           <Route path="/drive" element={<Drive />} />
-          <Route path="/folders/:folderId" element={<Drive />} />
+          <Route path="/drive/folder/:folderId" element={<Drive />} />
         </Routes>
       </Router>
     </>

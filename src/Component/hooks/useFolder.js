@@ -90,7 +90,7 @@ export function useFolder(folderId = null, folder = null) {
 
   // do the search where parentId is equal to folderId (the property you want to check that item)
   // it's how firebase works
-  // parentId is the property you want to serach for
+  // parentId is the property you want to search for
   // == equal to is check
   useEffect(() => {
     return (
