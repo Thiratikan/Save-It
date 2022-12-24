@@ -10,8 +10,8 @@ import FolderBreadcrumbs from "./FolderBreadcrumbs";
 
 function Drive() {
   const { folderId } = useParams();
-  const { state = {} } = useLocation();
-  const { folder, childFolders } = useFolder(folderId, state.folder);
+  // const { state = {} } = useLocation();
+  const { folder, childFolders } = useFolder(folderId);
 
   return (
     <>
