@@ -7,7 +7,10 @@ import { Button } from "react-bootstrap";
 export default function Folder({ folder }) {
   return (
     <Button
-      to={`/drive/folder/${folder.id}`}
+      to={{
+        pathname: `/drive/folder/${folder.id}`,
+        state: { folder: folder },
+      }}
       variant="outline-dark"
       className="text-truncate w-100"
       as={Link}
@@ -16,8 +19,3 @@ export default function Folder({ folder }) {
     </Button>
   );
 }
-
-// to={{
-//   pathname: `/folder/${folder.id}`,
-//   state: { folder: folder },
-// }}

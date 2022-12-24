@@ -5,13 +5,13 @@ import { Container } from "react-bootstrap";
 import AddButton from "./AddButton";
 import { useFolder } from "../hooks/useFolder";
 import Folder from "./Folder";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import FolderBreadcrumbs from "./FolderBreadcrumbs";
 
 function Drive() {
   const { folderId } = useParams();
-  const { folder, childFolders } = useFolder(folderId);
-  console.log(childFolders);
+  const { state = {} } = useLocation();
+  const { folder, childFolders } = useFolder(folderId, state.folder);
 
   return (
     <>
@@ -19,7 +19,7 @@ function Drive() {
       <DriveDesign>
         <Container fluid>
           <div className="d-flex align-items-center">
-            <FolderBreadcrumbs currentFolder={Folder} />
+            <FolderBreadcrumbs currentFolder={folder} />
             <AddButton currentFolder={folder} />
           </div>
           {/* loop through child folders and then render them */}

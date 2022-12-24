@@ -24,6 +24,8 @@ function AddButton({ currentFolder }) {
 
     if (currentFolder == null) return;
 
+    // The path is default by setting to currentFolder.path
+
     const path = [...currentFolder.path];
     if (currentFolder !== ROOT_FOLDER) {
       path.push({ name: currentFolder.name, id: currentFolder.id });
@@ -34,9 +36,8 @@ function AddButton({ currentFolder }) {
       parentId: currentFolder.id,
       userId: currentUser.uid,
       path: path,
-      createAt: database.getCurrentTimestamp(),
+      createdAt: database.getCurrentTimestamp(),
     });
-
     setName("");
     closeModal();
   }
