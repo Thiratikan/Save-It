@@ -7,7 +7,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 import { v4 as uuidV4 } from "uuid";
 import { ProgressBar, Toast } from "react-bootstrap";
-import { ref, uploadBytesResumable } from "firebase/storage";
+import { ref, uploadBytes } from "firebase/storage";
 
 export default function AddFileButton({ currentFolder }) {
   const [uploadingFiles, setUploadingFiles] = useState([]);
@@ -46,7 +46,7 @@ export default function AddFileButton({ currentFolder }) {
         storage,
         `drive/files/${currentUser.uid}/${filePath}`
       );
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      const uploadTask = uploadBytes(storageRef, file);
 
       uploadTask.on(
         "state_changed",
@@ -116,6 +116,7 @@ export default function AddFileButton({ currentFolder }) {
           style={{ opacity: 0, position: "absolute", left: "-9999px" }}
         />
       </label>
+
       {uploadingFiles.length > 0 &&
         ReactDOM.createPortal(
           <div
