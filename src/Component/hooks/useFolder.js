@@ -93,18 +93,16 @@ export function useFolder(folderId = null, folder = null) {
   // parentId is the property you want to search for
   // == equal to is check
   useEffect(() => {
-    return (
-      database.folders
-        .where("parentId", "==", folderId)
-        .where("userId", "==", currentUser.uid)
-        // .orderBy("createdAt")
-        .onSnapshot((snapshot) => {
-          dispatch({
-            type: ACTIONS.SET_CHILD_FOLDERS,
-            payload: { childFolders: snapshot.docs.map(database.formatDoc) },
-          });
-        })
-    );
+    return database.folders
+      .where("parentId", "==", folderId)
+      .where("userId", "==", currentUser.uid)
+      .orderBy("createdAt")
+      .onSnapshot((snapshot) => {
+        dispatch({
+          type: ACTIONS.SET_CHILD_FOLDERS,
+          payload: { childFolders: snapshot.docs.map(database.formatDoc) },
+        });
+      });
   }, [folderId, currentUser]);
 
   return state;

@@ -8,7 +8,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { v4 as uuidV4 } from "uuid";
 import { ROOT_FOLDER } from "../hooks/useFolder";
 
-function AddButton({ currentFolder }) {
+function AddFolderButton({ currentFolder }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const { currentUser } = useAuth();
@@ -44,7 +44,7 @@ function AddButton({ currentFolder }) {
   return (
     <>
       <button variant="primary" onClick={openModal}>
-        <FontAwesomeIcon icon={faFolderPlus} className="plusfolder" />
+        <FontAwesomeIcon icon={faFolderPlus} className="folder" />
       </button>
       <Modal show={open} onHide={closeModal}>
         <Form onSubmit={handleSubmit}>
@@ -73,4 +73,4 @@ function AddButton({ currentFolder }) {
   );
 }
 
-export default AddButton;
+export default AddFolderButton;

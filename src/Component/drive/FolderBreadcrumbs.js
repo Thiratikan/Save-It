@@ -16,6 +16,7 @@ export default function FolderBreadcrumbs({ currentFolder }) {
         <Breadcrumb.Item
           key={folder.id}
           linkAs={Link}
+          // passing state along with route . In the state has an object which contains cureent folder (...folder) and adding path on it that everythin on the first element until the current index that click on
           linkProps={{
             to: {
               pathname: folder.id ? `/drive/folder/${folder.id}` : "/drive",

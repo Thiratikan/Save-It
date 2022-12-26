@@ -2,25 +2,26 @@ import React from "react";
 import Navbar from "./Navbar";
 import { DriveDesign } from "../../styles/Style-Dashboard";
 import { Container } from "react-bootstrap";
-import AddButton from "./AddButton";
+import AddFolderButton from "./AddFolderButton";
 import { useFolder } from "../hooks/useFolder";
 import Folder from "./Folder";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import FolderBreadcrumbs from "./FolderBreadcrumbs";
+import AddFileButton from "./AddFileButton";
 
 function Drive() {
   const { folderId } = useParams();
-  // const { state = {} } = useLocation();
   const { folder, childFolders } = useFolder(folderId);
 
   return (
     <>
       <Navbar />
       <DriveDesign>
-        <Container fluid>
+        <Container fluid className="p-4">
           <div className="d-flex align-items-center">
             <FolderBreadcrumbs currentFolder={folder} />
-            <AddButton currentFolder={folder} />
+            <AddFileButton currentFolder={folder} />
+            <AddFolderButton currentFolder={folder} />
           </div>
           {/* loop through child folders and then render them */}
           {/* childFolders.length > 0 means we have some folder */}

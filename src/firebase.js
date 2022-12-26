@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import { getApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const app = firebase.initializeApp({
@@ -25,7 +26,7 @@ export const database = {
   // create time stamp for the server
 };
 
-export const storage = getStorage(app);
+export const storage = getStorage();
 export const auth = app.auth();
 
 export default app;
