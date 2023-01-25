@@ -67,16 +67,19 @@ export const NavSideBar = styled.div`
 
 export const DriveDesign = styled.div`
   color: blue;
-  .plusfolder {
+  .folder {
     color: #f5bf2a;
     border-color: none;
     width: 30px;
     height: 30px;
-    margin: auto;
+    margin-right: 5px;
   }
   button {
     background-color: transparent;
     border-color: transparent;
+    cursor: pointer;
+  }
+  label {
     cursor: pointer;
   }
 `;

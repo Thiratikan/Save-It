@@ -25,7 +25,7 @@ export const database = {
   // create time stamp for the server
 };
 
-export const storage = getStorage(app);
+export const storage = getStorage();
 export const auth = app.auth();
 
 export default app;
